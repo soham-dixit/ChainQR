@@ -1,0 +1,181 @@
+@import url('https://fonts.googleapis.com/css2?family=Lora&family=Playfair+Display:wght@400;600&family=Roboto&display=swap');
+
+html,body{
+    margin: 0;
+    padding: 0;
+}
+
+.home{
+    width: 100vw;
+    height: 30vh;
+    margin: 0;
+    padding: 0;
+    background-image: url('../assets/white-grid-black-background.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+}
+
+.content{
+    margin-left: 5vw;
+    margin-top: 2vh;
+}
+
+.welcomeText{
+    color: white;
+    font-family: 'Playfair Display', serif;
+    font-size: 3.5vw;
+    font-weight: bold;
+    letter-spacing: 0.20vw;
+}
+
+.welcomeText{
+    color: white;
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5vw;
+    font-weight: bold;
+    letter-spacing: 0.20vw;
+}
+
+.welcomeButtons{
+    display: flex;
+    gap: 2vw;
+}
+
+.upiInput{
+    color: black;
+    padding: 5px;
+    padding-left: 1vw;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.5vw;
+    width: 25vw;
+}
+
+.upiButton{
+    color: white;
+    background-color: black;
+    border: 1px solid #9ADE7B;
+    padding: 1.25vw;
+    font-family: 'Roboto', sans-serif;
+    letter-spacing: 1.5px;
+    font-size: 1.5vw;
+    box-shadow: 2px 2px #9FBB73;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.upiButton:hover{
+    box-shadow: 0px 0px;
+    transform: translateX(2px);
+    transform: translatey(2px);
+}
+
+.section{
+    width: 100vw;
+    height: 70vh;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    gap: 2vw;
+    background-color: #0F0F0F;
+}
+
+.sectionButton{
+    height: auto;
+    color: white;
+    background-color: black;
+    border: 1px solid #9ADE7B;
+    padding: 1.25vw 1.5vw;
+    font-family: 'Roboto', sans-serif;
+    letter-spacing: 1.5px;
+    font-size: 1.5vw;
+    box-shadow: 2px 2px #9FBB73;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.sectionButton:hover{
+    box-shadow: 0px 0px;
+    transform: translateX(2px);
+    transform: translatey(2px);
+}
+
+@media only screen and (max-width: 540px) {
+
+    .content{
+        margin-left: 5vh;
+        margin-right: 5vh;
+        margin-top: 2vh;
+    }
+    
+    .welcomeText{
+        font-size: 10vw;
+        letter-spacing: 0.5vw;
+    }
+    
+    .welcomeButtons{
+        flex-direction: column;
+    }
+    
+    .upiInput{
+        width: 70vw;
+        padding: 2vw;
+        padding-left: 3vw;
+        font-family: 'Roboto', sans-serif;
+        font-size: 6.5vw;
+    }
+    
+    .upiButton{
+        color: white;
+        background-color: black;
+        border: 1px solid #9ADE7B;
+        padding: 1.25vw;
+        font-family: 'Roboto', sans-serif;
+        letter-spacing: 1.5px;
+        font-size: 1.5vw;
+        box-shadow: 2px 2px #9FBB73;
+        -webkit-tap-highlight-color: transparent;
+    }
+    
+    .upiButton:hover{
+        box-shadow: 0px 0px;
+        transform: translateX(2px);
+        transform: translatey(2px);
+    }
+    
+    .section{
+        width: 100vw;
+        height: 30vh;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: row;
+        gap: 2vw;
+        background-color: #0F0F0F;
+    }
+    
+    .sectionButton{
+        height: auto;
+        color: white;
+        background-color: black;
+        border: 1px solid #9ADE7B;
+        padding: 1.25vw 1.5vw;
+        font-family: 'Roboto', sans-serif;
+        letter-spacing: 1.5px;
+        font-size: 1.5vw;
+        box-shadow: 2px 2px #9FBB73;
+        -webkit-tap-highlight-color: transparent;
+    }
+    
+    .sectionButton:hover{
+        box-shadow: 0px 0px;
+        transform: translateX(2px);
+        transform: translatey(2px);
+    }
+    
+}

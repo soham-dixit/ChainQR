@@ -1,0 +1,88 @@
+@import url('https://fonts.googleapis.com/css2?family=Lora&family=Playfair+Display:wght@400;600&family=Roboto&display=swap');
+@import url('https://fonts.cdnfonts.com/css/broadway');
+
+html,body{
+    margin: 0;
+    padding: 0;
+}
+
+.home{
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    background-image: url('../assets/aptos_network_og_meta.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* -webkit-filter: brightness(80%); */
+}
+
+.heading{
+    all: unset;
+    color: white;
+    font-family: 'Broadway', sans-serif;
+    margin-top: 25%;
+    font-size: 11.25vw;
+    font-weight: 500;
+    letter-spacing: 0.25vw;
+    -webkit-filter: drop-shadow(15px 15px 0px #B5C0D0);
+    filter: drop-shadow(8px 5px 0px #B5C0D0); 
+    -webkit-tap-highlight-color: transparent;
+}
+
+.heading:hover{
+    -webkit-filter: drop-shadow(5px 5px 0px #41444B);
+    filter: drop-shadow(5px 3px 0px #41444B);
+    transform: translateY(3px);
+}
+
+.heading:active{
+    color: #FDF4F5;
+    -webkit-filter: drop-shadow(5px 5px 0px #41444B);
+    filter: drop-shadow(5px 3px 0px #41444B);
+    transform: translateY(3px);
+}
+
+@media only screen and (max-width: 540px) {
+    .home{
+        all: unset; 
+        width: 100vw;
+        height: 100vh;
+        margin: 0;
+        padding: 0;
+        background-image: url('../assets/aptos_network_og_meta.png');
+        background-repeat: no-repeat;
+        background-size: cover;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .heading{
+        all: unset;
+        color: white;
+        font-family: 'Broadway', sans-serif;
+        font-size: 12.5vw;
+        font-weight: 500;
+        letter-spacing: 0.5vw;
+        -webkit-filter: drop-shadow(15px 15px 0px #41444B);
+        filter: drop-shadow(5px 3px 0px #41444B); 
+        -webkit-tap-highlight-color: transparent;
+    }
+    
+    .heading:hover{
+        color: #404258;
+        filter: drop-shadow(1px 1px 0px #41444B);
+        transform: translateY(1px);
+    }
+    
+    .heading:active{
+        color: #404258;
+        filter: drop-shadow(1px 1px 0px #41444B);
+        transform: translateY(1px);
+    }   
+}
