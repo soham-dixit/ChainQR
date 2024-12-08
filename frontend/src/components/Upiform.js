@@ -326,7 +326,7 @@ export default function Upiform() {
       <div className={styles.home}>
         <div className={styles.content}>
           <p className={styles.welcomeText}>
-            hey Mustansir, <br></br> good things are worth the wait
+            hey {userData.name}! <br></br> welcome to ChainQR! <br></br>
           </p>
           <div className={styles.welcomeButtons}>
             <input

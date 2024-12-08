@@ -1,4 +1,4 @@
-
+                                              
 import './App.css';
 import { useEffect, useState } from 'react';
 import { Web3Auth } from "@web3auth/modal";
@@ -14,7 +14,7 @@ import Header from './components/Header'
 import TransakWidget from './components/TransakWidget';
 import UniswapSubgraph from './components/UniswapSubgraph';
 import MicroInvestment from './components/MicroInvestment';
-
+import { OktoProvider, BuildType } from 'okto-sdk-react';
 
 function App() {
   const [web3auth, setWeb3auth] = useState(null);
@@ -53,7 +53,8 @@ function App() {
   
   return (
 
-    <div className="App">
+    <OktoProvider apiKey={"d9e324c8-728d-4d8a-a837-cd8c613f273e"} buildType={BuildType.SANDBOX}>
+      <div className="App">
       
       <BrowserRouter>
       <Routes>
@@ -70,6 +71,7 @@ function App() {
       </Routes>
       </BrowserRouter>
     </div>
+    </OktoProvider>
   );
 }
 
