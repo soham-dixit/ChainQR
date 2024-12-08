@@ -106,7 +106,7 @@ function Scanner() {
 
   const validateCreds = async () => {
     let pubKeyForValidation = await fetch(
-      "http://localhost:5000/validateCreds",
+      "https://chainqr-backend-jw4zkollc-sohamdixits-projects.vercel.app/validateCreds",
       {
         method: "post",
         body: JSON.stringify({
@@ -188,11 +188,14 @@ function Scanner() {
         clientDataJSON: binToStr(res.response.clientDataJSON),
       };
 
-      let auth = await fetch("http://localhost:5000/auth", {
-        method: "post",
-        body: JSON.stringify(extractedData),
-        headers: { "Content-Type": "application/json" },
-      });
+      let auth = await fetch(
+        "https://chainqr-backend-jw4zkollc-sohamdixits-projects.vercel.app/auth",
+        {
+          method: "post",
+          body: JSON.stringify(extractedData),
+          headers: { "Content-Type": "application/json" },
+        }
+      );
 
       auth = await auth.json();
       if (auth.Auth) {
@@ -338,7 +341,7 @@ function Scanner() {
     const pubKey = localStorage.getItem("publicAddress");
 
     let contractAddress = await fetch(
-      `http://localhost:5000/getContractAdress/${pubKey}`,
+      `https://chainqr-backend-jw4zkollc-sohamdixits-projects.vercel.app/getContractAdress/${pubKey}`,
       {
         method: "get",
         headers: { "Content-Type": "application/json" },
@@ -346,10 +349,13 @@ function Scanner() {
     );
     contractAddress = await contractAddress.json();
 
-    let address = await fetch(`http://localhost:5000/getAddress/${UpiID}`, {
-      method: "get",
-      headers: { "Content-Type": "application/json" },
-    });
+    let address = await fetch(
+      `https://chainqr-backend-jw4zkollc-sohamdixits-projects.vercel.app/getAddress/${UpiID}`,
+      {
+        method: "get",
+        headers: { "Content-Type": "application/json" },
+      }
+    );
     address = await address.json();
     if (!provider) {
       console.log("provider not initialized yet");

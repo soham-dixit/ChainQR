@@ -22,7 +22,7 @@ export default function Upiform() {
   // const clientId =
   //   "BMkKHE4n2KgzLWFXDmpCVIpWMggQ8Pe8_4pRkbm9aNafKnn0WRlb1zoy6JlOh2nN2Aw54jIAbFbsAUut3tuJr8w";
   const clientId =
-    "BMRK2HAmHBpmz5d2ouTDc0haOrZVXkeWjV06ey3H-tQBi14BAhou626rKQm_-IUjoSQ5hbs3ruk_OkrD8j06fs8";
+    "BMkIcnCDXsPdrCPRI87Aleozma75z4EGhrxDzjD9dD5E9GsRekIVd4OMXN5Tiv1A4Wa4bs8DR651gyp_F1WA8Hs";
 
   function strToBin(str) {
     return Uint8Array.from(atob(str), (c) => c.charCodeAt(0));
@@ -61,7 +61,7 @@ export default function Upiform() {
 
   const validateCreds = async () => {
     let pubKeyForValidation = await fetch(
-      "http://localhost:5000/validateCreds",
+      "https://chainqr-backend-jw4zkollc-sohamdixits-projects.vercel.app/validateCreds",
       {
         method: "post",
         body: JSON.stringify({
@@ -143,11 +143,14 @@ export default function Upiform() {
         clientDataJSON: binToStr(res.response.clientDataJSON),
       };
 
-      let auth = await fetch("http://localhost:5000/auth", {
-        method: "post",
-        body: JSON.stringify(extractedData),
-        headers: { "Content-Type": "application/json" },
-      });
+      let auth = await fetch(
+        "https://chainqr-backend-jw4zkollc-sohamdixits-projects.vercel.app/auth",
+        {
+          method: "post",
+          body: JSON.stringify(extractedData),
+          headers: { "Content-Type": "application/json" },
+        }
+      );
 
       auth = await auth.json();
       if (auth.Auth) {
@@ -178,11 +181,14 @@ export default function Upiform() {
     localStorage.setItem("publicAddress", AccountID);
     console.log(address);
 
-    let pubkey = await fetch("http://localhost:5000/createpublickey", {
-      method: "post",
-      body: JSON.stringify({ address: AccountID, name: user.name }),
-      headers: { "Content-Type": "application/json" },
-    });
+    let pubkey = await fetch(
+      "https://chainqr-backend-jw4zkollc-sohamdixits-projects.vercel.app/createpublickey",
+      {
+        method: "post",
+        body: JSON.stringify({ address: AccountID, name: user.name }),
+        headers: { "Content-Type": "application/json" },
+      }
+    );
     const enc = new TextEncoder();
     // pubkey=enc.encode(pubkey);
 
@@ -273,11 +279,14 @@ export default function Upiform() {
     console.log("AccountID: ", AccountID);
     console.log("UpiID: ", UpiID);
     console.log("RawID: ", RawID);
-    let result2 = await fetch("http://localhost:5000/login", {
-      method: "post",
-      body: JSON.stringify({ Name, AccountID, UpiID, RawID }),
-      headers: { "Content-Type": "application/json" },
-    });
+    let result2 = await fetch(
+      "https://chainqr-backend-jw4zkollc-sohamdixits-projects.vercel.app/login",
+      {
+        method: "post",
+        body: JSON.stringify({ Name, AccountID, UpiID, RawID }),
+        headers: { "Content-Type": "application/json" },
+      }
+    );
     result2 = await result2.json();
     console.log(result2);
     localStorage.removeItem("rawId");

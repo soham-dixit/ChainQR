@@ -15,7 +15,7 @@ export default function MicroInvestment() {
   // const clientId =
   //   "BMkKHE4n2KgzLWFXDmpCVIpWMggQ8Pe8_4pRkbm9aNafKnn0WRlb1zoy6JlOh2nN2Aw54jIAbFbsAUut3tuJr8w";
   const clientId =
-    "BMRK2HAmHBpmz5d2ouTDc0haOrZVXkeWjV06ey3H-tQBi14BAhou626rKQm_-IUjoSQ5hbs3ruk_OkrD8j06fs8";
+    "BMkIcnCDXsPdrCPRI87Aleozma75z4EGhrxDzjD9dD5E9GsRekIVd4OMXN5Tiv1A4Wa4bs8DR651gyp_F1WA8Hs";
 
   const sendGetContractBalance = async () => {
     if (!provider) {
@@ -25,7 +25,7 @@ export default function MicroInvestment() {
     const pubKey = localStorage.getItem("publicAddress");
 
     let contractAddress = await fetch(
-      `http://localhost:5000/getContractAdress/${pubKey}`,
+      `https://chainqr-backend-jw4zkollc-sohamdixits-projects.vercel.app/getContractAdress/${pubKey}`,
       {
         method: "get",
         headers: { "Content-Type": "application/json" },
@@ -58,7 +58,7 @@ export default function MicroInvestment() {
         const pubKey = localStorage.getItem("publicAddress");
 
         let contractAddress = await fetch(
-          `http://localhost:5000/getContractAdress/${pubKey}`,
+          `https://chainqr-backend-jw4zkollc-sohamdixits-projects.vercel.app/getContractAdress/${pubKey}`,
           {
             method: "get",
             headers: { "Content-Type": "application/json" },
@@ -85,7 +85,7 @@ export default function MicroInvestment() {
     const pubKey = localStorage.getItem("publicAddress");
 
     let contractAddress = await fetch(
-      `http://localhost:5000/getContractAdress/${pubKey}`,
+      `https://chainqr-backend-jw4zkollc-sohamdixits-projects.vercel.app/getContractAdress/${pubKey}`,
       {
         method: "get",
         headers: { "Content-Type": "application/json" },

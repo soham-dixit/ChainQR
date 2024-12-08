@@ -17,7 +17,7 @@ export default function Example() {
   const { authenticate } = useOkto();
 
   const clientId =
-    "BMRK2HAmHBpmz5d2ouTDc0haOrZVXkeWjV06ey3H-tQBi14BAhou626rKQm_-IUjoSQ5hbs3ruk_OkrD8j06fs8";
+    "BMkIcnCDXsPdrCPRI87Aleozma75z4EGhrxDzjD9dD5E9GsRekIVd4OMXN5Tiv1A4Wa4bs8DR651gyp_F1WA8Hs";
 
   useEffect(() => {
     const init = async () => {
