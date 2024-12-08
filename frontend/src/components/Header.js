@@ -1,12 +1,12 @@
-import { useState, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import { Web3Auth } from "@web3auth/modal";
 import { CHAIN_NAMESPACES } from "@web3auth/base";
 import { GoogleLogin } from "@react-oauth/google";
 import { useOkto } from "okto-sdk-react";
 import axios from "axios";
 
-import styles from './css/Home.module.css';
+import styles from "./css/Home.module.css";
 
 export default function Example() {
   const [web3auth, setWeb3auth] = useState(null);
@@ -16,7 +16,8 @@ export default function Example() {
   const navigate = useNavigate();
   const { authenticate } = useOkto();
 
-  const clientId = "BMRK2HAmHBpmz5d2ouTDc0haOrZVXkeWjV06ey3H-tQBi14BAhou626rKQm_-IUjoSQ5hbs3ruk_OkrD8j06fs8";
+  const clientId =
+    "BMRK2HAmHBpmz5d2ouTDc0haOrZVXkeWjV06ey3H-tQBi14BAhou626rKQm_-IUjoSQ5hbs3ruk_OkrD8j06fs8";
 
   useEffect(() => {
     const init = async () => {
@@ -49,8 +50,8 @@ export default function Example() {
     }
     const web3authProvider = await web3auth.connect();
     setProvider(web3authProvider);
-    localStorage.setItem('user', JSON.stringify(provider));
-    navigate('/upiform');
+    localStorage.setItem("user", JSON.stringify(provider));
+    navigate("/upiform");
   };
 
   const handleGoogleLogin = async (credentialResponse) => {
@@ -58,21 +59,26 @@ export default function Example() {
     authenticate(idToken, async (authResponse, error) => {
       if (authResponse) {
         setAuthToken(authResponse.auth_token);
-        console.log("Authenticated successfully, auth token:", authResponse.auth_token);
+        console.log(
+          "Authenticated successfully, auth token:",
+          authResponse.auth_token
+        );
 
         const options = {
-          method: 'GET',
-          url: 'https://sandbox-api.okto.tech/api/v1/user_from_token',
-          headers: { Authorization: `Bearer ${authResponse.auth_token}` }
+          method: "GET",
+          url: "https://sandbox-api.okto.tech/api/v1/user_from_token",
+          headers: { Authorization: `Bearer ${authResponse.auth_token}` },
         };
 
-        await axios.request(options).then((res) => {
-          setUserName(res.data.data.email);
-          navigate('/upiform');
-        }).catch((err) => {
-          console.log(`The Error is oocured : ${err}`)
-        })
-
+        await axios
+          .request(options)
+          .then((res) => {
+            setUserName(res.data.data.email);
+            navigate("/upiform");
+          })
+          .catch((err) => {
+            console.log(`The Error is oocured : ${err}`);
+          });
       } else if (error) {
         console.error("Authentication error:", error);
       }
@@ -93,7 +99,9 @@ export default function Example() {
       )}
 
       <div className={styles.home}>
-        <button onClick={login} className={styles.heading}>Web3 Cred</button>
+        <button onClick={login} className={styles.heading}>
+          Enter into ChainQR
+        </button>
       </div>
     </>
   );
